@@ -1,0 +1,11 @@
+/*
+   Copyright (C) 2014  Stoney Jackson <dr.stoney@gmail.com>
+   License: GPLv3 <http://www.gnu.org/licenses/>
+*/
+
+pre code {
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    border: none;
+}

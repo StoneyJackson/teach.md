@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$title$</title>
+    <link rel="stylesheet" href="$base-url$/assets/foundation/css/normalize.css">
+    <link rel="stylesheet" href="$base-url$/assets/foundation/css/foundation.css">
+    <link rel="stylesheet" href="$base-url$/assets/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="$base-url$/assets/activity/activity.css">
+    <script src="$base-url$/assets/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="$base-url$/assets/foundation/js/vendor/modernizr.js"></script>
+    <script src="$base-url$/assets/moment/moment.js"></script>
+    <script src="$base-url$/assets/foundation/js/vendor/jquery.js"></script>
+    <script src="$base-url$/assets/activity/activity.js"></script>
+  </head>
+  <body>
+    <div id="requirements-modal" class="reveal-modal" data-reveal>
+      <h2>Requirements</h2>
+      <ul>
+        <li><b>JavaScript enabled browser</b></li>
+        <li><b>Ability to print to a PDF file</b><br>
+        OSX can do this natively. Windows users will
+        need to use a browser with an appropriate plugin.<br>
+        <a href="#" data-reveal-id="saving-modal">Learn more about saving/printing to PDF</a>
+        </li>
+      </ul>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="saving-modal" class="reveal-modal" data-reveal>
+      <h2>Saving</h2>
+      <p>To save your work, print your page to a PDF.</p>
+
+      <h3>Using Mac OSX</h3>
+      <ol>
+        <li>Start the print process</li>
+        <li>In the "PDF" menu, select "Save as PDF..."</li>
+      </ol>
+
+      <h3>Using Firefox</h3>
+      <ol>
+        <li>Install <a target="_blank" href="https://addons.mozilla.org/bn-BD/firefox/addon/print-pages-to-pdf/">Print pages to PDF</a></li>
+        <li>Right-click on the page and select "Print page to PDF"</li>
+      </ol>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <form id="activity" name="activity" method="POST" action="#">
+      <div class="row">
+        <div class="column">
+          <div class="right"><input class="button tiny alert" type="reset" value="Reset Page"></div>
+          <div class="left">
+            <a href="#" data-reveal-id="requirements-modal">Requirements</a>
+            <h1 id="page-title">$title$</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns">
+          <div class="panel">
+            <div class="right text-right">
+              <div><script>document.write(moment().format('ll'));</script></div>
+              <div id="time"></div>
+            </div>
+            <h3>Names</h3>
+            <div><label>Facilitator</label><input type="text" name="facilitator"></div>
+            <div><label>Technician</label><input type="text" name="technician"></div>
+            <div><label>Recorder</label><input type="text" name="recorder"></div>
+            <div><input style="display:none" type="text" id="start" name="start" value="0"></div>
+          </div>
+        </div>
+      </div>
+      <div id="content" class="row">
+        <div class="columns">
+        $body$
+        </div><!-- column -->
+      </div><!-- id="content" -->
+      <div id="feedback" class="row panel">
+        <div class="small-12">
+          <div class="right">$VERSION$</div>
+          <h2>Feedback</h2>
+          <div class="question">
+            <p>How useful was this page?</p>
+
+            <input id="usefulness-very" name="usefulness" type="radio" value="very">
+            <label for="usefulness-very"> Very</label>
+
+            <input id="usefulness-some" name="usefulness" type="radio" value="some">
+            <label for="usefulness-some"> Somewhat </label>
+
+            <input id="usefulness-little" name="usefulness" type="radio" value="little">
+            <label for="usefulness-little"> Little </label>
+
+            <input id="usefulness-not" name="usefulness" type="radio" value="not">
+            <label for="usefulness-not"> Not </label>
+
+            <input id="usefulness-no-response" name="usefulness" type="radio" value="no-response" checked="checked">
+            <label for="usefulness-no-response"> (No response) </label>
+          </div>
+
+          <div class="question">
+            <p>How would you improve this page?</p>
+            <textarea name="improve"></textarea>
+          </div>
+        </div>
+      </div><!-- footer -->
+      <div class="row">
+        <a href="#" data-reveal-id="saving-modal" class="button">Submit</a>
+      </div>
+      <div>
+        Content copyright &copy; [name] [license]<br>
+        teach.md - Copyright &copy; Stoney Jackson - GPLv3 License
+      </div>
+    </form>
+    <script src="$base-url$/assets/foundation/js/foundation.min.js"></script>
+    <script src="$base-url$/assets/foundation/js/foundation/foundation.reveal.js"></script>
+    <script src="$base-url$/assets/sisyphus/sisyphus.min.js"></script>
+    <script>$$(document).foundation();</script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+
+#   Copyright (C) 2014  Stoney Jackson <dr.stoney@gmail.com>
+#   License: GPLv3 <http://www.gnu.org/licenses/>
+
+
+from pathlib import Path
+import sys
+
+def main():
+    directory = convert_filename_to_directory(sys.argv[1])
+    path_to_root = calc_path_to_root_from(directory)
+    print(path_to_root)
+
+def calc_path_to_root_from(directory):
+    result = []
+    while not is_root(directory) and not contains_file(directory, '.root'):
+        directory = directory.parent
+        result.append('..')
+    result = '/'.join(result)
+    if result == '':
+        return '.'
+    else:
+        return result
+
+def is_root(directory):
+    return str(directory) == str(directory.root)
+
+def convert_filename_to_directory(filename):
+    path = Path(filename).resolve()
+    if path.is_file():
+        path = path.parent
+    return path
+
+def contains_file(directory, filename):
+    return filename in list_files(directory)
+
+def list_files(directory):
+    return [p.name for p in list(directory.glob('*'))]
+
+
+
+
+main()

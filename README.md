@@ -41,11 +41,11 @@ naming conventions to identify markdown files a slides, activities, or a
 handout. Run `make` to generate `www/`. Run `make` clean do delete everything in
 `www/`.
 
-Files named `\*.slides.md` will generate reveal.js slide presentations.
+Files named `*.slides.md` will generate reveal.js slide presentations.
 You may customize its output by modifying `templates/slides.html` and the options
 passed to pandoc within the `Makefile`.
 
-Similarly files named `\*.activity.md` will generate HTML based on
+Similarly files named `*.activity.md` will generate HTML based on
 `templates/activity.html`.
 
-Files named `\*.plantuml` will generate png files using plantuml.
+Files named `*.plantuml` will generate png files using plantuml.

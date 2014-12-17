@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$title$</title>
+    <link rel="stylesheet" href="$base-url$/assets/foundation/css/normalize.css">
+    <link rel="stylesheet" href="$base-url$/assets/foundation/css/foundation.css">
+    <link rel="stylesheet" href="$base-url$/assets/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="$base-url$/assets/activity/activity.css">
+    <script src="$base-url$/assets/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="$base-url$/assets/foundation/js/vendor/modernizr.js"></script>
+    <script src="$base-url$/assets/moment/moment.js"></script>
+    <script src="$base-url$/assets/foundation/js/vendor/jquery.js"></script>
+  </head>
+  <body>
+    <form id="activity" name="activity" method="POST" action="#">
+      <div id="content" class="row">
+        <div class="columns">
+        $body$
+        </div><!-- column -->
+      </div><!-- id="content" -->
+      <div class="row">
+        <div class="columns">
+            Content copyright &copy; $author$ - $license$<br>
+            teach.md copyright &copy; Stoney Jackson - GPLv3 License
+        </div>
+      </div>
+    </form>
+    <script src="$base-url$/assets/foundation/js/foundation.min.js"></script>
+    <script src="$base-url$/assets/foundation/js/foundation/foundation.reveal.js"></script>
+    <script>$$(document).foundation();</script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
